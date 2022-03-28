@@ -120,31 +120,47 @@ minusFive(30, 20, 30, 40);
 // console.log(potato);
 //외래변수????암튼 그런 의미 potato는 body에서만 정의한다
 
+//returns
+// console.log : 콘솔에 결과를 보여주기 위한 것
+// 주스를 만들고 싶은데 그걸 믹서기 안에서 꺼내지 못한다면?
+// return을 한 번 하면 function은 작동을 멈추고 결과 값을 return한다(return까지만 작동한다!)
 const calculator = {
-  add: function (a, b) {
-    alert(a + b);
+  plus: function (a, b) {
+    // console.log("hello");
+    return a + b;
+    // console.log("bye");
   },
 
   minus: function (a, b) {
-    alert(a - b);
+    return a - b;
   },
 
   times: function (a, b) {
-    alert(a * b);
+    return a * b;
   },
 
   divide: function (a, b) {
-    alert(a / b);
+    return a / b;
   },
 
   power: function (a, b) {
-    alert(a ** b);
+    return a ** b;
   },
 };
 
-console.log(calculator.add(100, 10));
-calculator.add(100, 10);
-calculator.minus(100, 10);
-calculator.times(100, 10);
-calculator.divide(100, 10);
-calculator.power(2, 10);
+const plusResult = calculator.plus(2, 3);
+const minusResult = calculator.minus(plusResult, 10);
+const timesResult = calculator.times(10, minusResult);
+const divideResult = calculator.divide(timesResult, plusResult);
+const powerResult = calculator.power(divideResult, minusResult);
+
+const age = 27;
+function calculateKrAge(ageOfForeigner) {
+  ageOfForeigner + 2;
+  return "hello";
+}
+// 함수는 어떤 일을 그저 수행하는 것이 아니라, 수행 후 그 결과를 알려주는 것이다.
+
+const krAge = calculateKrAge(age);
+
+console.log(krAge);
