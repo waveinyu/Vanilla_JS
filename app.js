@@ -1,26 +1,42 @@
-const title = document.querySelector(".hello:first-child h1");
-console.dir(title);
+const h1 = document.querySelector(".hello:first-child h1");
+console.dir(h1);
 
 //on- : events, 모두 JavaScript object
 
 function handleTitleClick() {
-  title.style.color = "whitesmoke";
-  title.innerText = "title was clicked!";
+  h1.style.color = "whitesmoke";
+  h1.innerText = "h1 was clicked!";
 }
 
 function handleMouseEnter() {
-  title.innerText = "mouse is here!";
+  h1.innerText = "mouse is here!";
 }
 
 function handleMouseLeave() {
-  title.innerText = "mouse is gone!";
+  h1.innerText = "mouse is gone!";
 }
 
-title.addEventListener("click", handleTitleClick);
-title.addEventListener("mouseenter", handleMouseEnter);
-title.addEventListener("mouseleave", handleMouseLeave);
-//handleTitleClick에 괄호(실행버튼)를 넣지 않는 건 매우 중요
-//왜냐하면, 우리가 직접 실행하는 게 아니라 자바스크립트가 해주기를 바라는 것이기 때문!
+function handleWindowResize() {
+  document.body.style.backgroundColor = "tomato";
+}
 
-//event를 찾고 싶을 때? APIs가 들어간 게시글을 찾기
-//API : JavaScript관점의 html elements
+function handleWindowCopy() {
+  alert("Copier!");
+}
+
+function handleWindowOffline() {
+  alert("SOS No Wifi");
+}
+
+function handleWindowOnline() {
+  alert("All Good");
+}
+
+h1.addEventListener("click", handleTitleClick);
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
