@@ -1,42 +1,18 @@
-const h1 = document.querySelector(".hello:first-child h1");
-console.dir(h1);
-
-//on- : events, 모두 JavaScript object
+const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleClick() {
-  h1.style.color = "whitesmoke";
-  h1.innerText = "h1 was clicked!";
-}
-
-function handleMouseEnter() {
-  h1.innerText = "mouse is here!";
-}
-
-function handleMouseLeave() {
-  h1.innerText = "mouse is gone!";
-}
-
-function handleWindowResize() {
-  document.body.style.backgroundColor = "tomato";
-}
-
-function handleWindowCopy() {
-  alert("Copier!");
-}
-
-function handleWindowOffline() {
-  alert("SOS No Wifi");
-}
-
-function handleWindowOnline() {
-  alert("All Good");
+  const currentColor = h1.style.color;
+  let newColor;
+  if (currentColor === "whitesmoke") {
+    newColor = "tomato";
+  } else {
+    newColor = "whitesmoke";
+  }
+  h1.style.color = newColor;
 }
 
 h1.addEventListener("click", handleTitleClick);
-h1.addEventListener("mouseenter", handleMouseEnter);
-h1.addEventListener("mouseleave", handleMouseLeave);
 
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
+// step 1. Seek elements
+// step 2. Listen event
+// step 3. React that event
