@@ -1,10 +1,9 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
 
-function handleTitleClick() {
-  h1.classList.toggle("clicked");
-  //toggle은 classList에 clicked class가 이미 있는지 확인해서 만약 있다면,
-  //toggle이 clicked를 제거해주고,
-  //만일 clicked가 없다면 toggle이 clicked를 추가해준다.
+function onLoginBtnClick() {
+  console.log("Hello", loginInput.value);
 }
-
-h1.addEventListener("click", handleTitleClick);
+//Log In 버튼을 누르면 clicked가 뜨게 만들었다.
+//click event를 loginButton에 연결
+loginButton.addEventListener("click", onLoginBtnClick);
