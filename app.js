@@ -1,21 +1,11 @@
-/*
-const loginForm = document.getElementById("");
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
-와 아래는 같다.
-*/
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
 
-function onLoginBtnClick() {
-  const username = loginInput.value;
-  console.log(username);
+function onLoginSubmit(event) {
+  event.preventDefault(); //어떤 이벤트든지 액션이 발생하지 않게 막는 것
+  console.log(loginInput.value);
 }
-//Log In 버튼을 누르면 clicked가 뜨게 만들었다.
-//click event를 loginButton에 연결
-loginButton.addEventListener("click", onLoginBtnClick);
+//누군가 form을 submit하면 브라우저는 기본적으로 페이지를 새로고침하게 되어있다.
+//preventDefault는 그 기본 동작을 막는 것
 
-/*
-validity of value
-값의 유효성을 확인하는 건 좋은 연습이다
-*/
+loginForm.addEventListener("submit", onLoginSubmit);
